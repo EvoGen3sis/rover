@@ -1,0 +1,5 @@
+{"python.languageServer": "Pylance",
+"python.analysis.indexing": true,
+"python.analysis.autoSearchPaths": true,
+"python.analysis.useLibraryCodeForTypes": true
+}
