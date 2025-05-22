@@ -1,0 +1,36 @@
+flask-notes-app/
+├── .github/
+│   └── workflows/
+│       └── tests.yml
+├── app/
+│   ├── __init__.py
+│   ├── config.py
+│   ├── models/
+│   │   ├── __init__.py
+│   │   ├── user.py
+│   │   └── note.py
+│   ├── api/
+│   │   ├── __init__.py
+│   │   ├── auth.py
+│   │   └── notes.py
+│   ├── schemas/
+│   │   ├── __init__.py
+│   │   ├── user.py
+│   │   └── note.py
+│   └── utils/
+│       ├── __init__.py
+│       └── helpers.py
+├── migrations/
+├── tests/
+│   ├── conftest.py
+│   ├── unit/
+│   │   ├── test_models.py
+│   │   └── test_utils.py
+│   ├── integration/
+│   │   └── test_api.py
+│   └── functional/
+│       └── test_routes.py
+├── .gitignore
+├── README.md
+├── requirements.txt
+└── run.py
