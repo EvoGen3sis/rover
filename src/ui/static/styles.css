@@ -57,11 +57,21 @@ body {
 
 .control {
     display: flex;
+    flex-direction: row;
     justify-content: flex-end;
     align-items: center;
     width: 100%;
     height: 40%;
     background-color: #fffac4;
+}
+
+.arrows {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 50%;
+    height: 40%;
+
 }
 
 .left,
