@@ -69,8 +69,9 @@ body {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    width: 50%;
-    height: 40%;
+    width: 40%;
+    height: 100%;
+    background-color: rgb(203, 177, 255);
 
 }
 
@@ -78,6 +79,7 @@ body {
 .middle,
 .right,
 .feed,
-.control {
+.control,
+.arrows {
   border: 1px solid black;
 }
