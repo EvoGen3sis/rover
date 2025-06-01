@@ -10,23 +10,54 @@ body {
 
 .columns {
     display: flex;
+    width: 100vw;
+    height: 100vh;
     border: 2px solid black;
 }
 
 .left {
     display: flex;
-    width: 15%;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
     height: 100%;
+    background-color: #d0e0ff;
 }
 
 .middle {
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex: 1;
-    height: 100%
+    height: 100%;
+    background-color: #ffffff;
 }
 
 .right {
     display: flex;
-    width: 15%;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
     height: 100%;
+    background-color: #ffd0d0;
+}
+
+.feed {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 60%;
+    background-color: #d7ffc4;
+}
+
+.control {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 40%;
+    background-color: #fffac4;
 }
