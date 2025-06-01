@@ -84,6 +84,26 @@ body {
 
 }
 
+.up-arrow {
+    display: flex;
+}
+
+.horizontal-arrows {
+    display: flex;
+}
+
+.left-arrow {
+    display: flex;
+}
+
+.right-arrow {
+    display: flex;
+}
+
+.down-arrow {
+    display: flex;
+}
+
 .left,
 .middle,
 .right,
