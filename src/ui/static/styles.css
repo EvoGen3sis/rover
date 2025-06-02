@@ -13,7 +13,7 @@ body {
     flex-direction: row; /* Changes the default of left to right, to top to bottom */
     width: 100vw; /* 100% of viewport's width */
     height: 100vh; /* 100% of viewport's height */
-    border: 2px solid black;
+    /* border: 2px solid black; */
 }
 
 .left,
