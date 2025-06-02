@@ -158,6 +158,13 @@ body {
   object-fit: contain;
 }
 
+.arrow button {
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
+
 .up-arrow,
 .left-arrow,
 .right-arrow,
