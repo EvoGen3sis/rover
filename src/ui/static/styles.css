@@ -170,4 +170,5 @@ body {
 .right-arrow,
 .down-arrow {
   border: 1px dashed red;
+  border-radius: 12%;
 }
