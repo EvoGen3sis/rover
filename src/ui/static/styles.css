@@ -87,6 +87,12 @@ body {
 
 }
 
+.instructions h2 {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
 .arrows {
     display: flex;
     flex-direction: column;
