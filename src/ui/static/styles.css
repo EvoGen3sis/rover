@@ -14,6 +14,7 @@ body {
     width: 100vw; /* 100% of viewport's width */
     height: 100vh; /* 100% of viewport's height */
     /* border: 2px solid black; */
+    border: 1px solid black;
 }
 
 .left,
@@ -43,8 +44,9 @@ body {
     flex: 1;
     height: 100%;
     background-color: #ffffff;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
 }
-
 
 .feed {
     display: flex;
@@ -53,6 +55,7 @@ body {
     width: 100%;
     height: 60%;
     background-color: #d7ffc4;
+    border-bottom: 1px solid black;
 }
 
 .filler {
@@ -76,6 +79,12 @@ body {
 
 .instructions {
     display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    /* width: 100%; */
+    height: 100%;
+    flex: 1;
+
 }
 
 .arrows {
@@ -86,6 +95,7 @@ body {
     width: 40%;
     height: 100%;
     background-color: rgb(203, 177, 255);
+    border-left: 1px solid black;
 
 }
 
@@ -148,6 +158,7 @@ body {
   object-fit: contain;
 }
 
+/*
 .left,
 .middle,
 .right,
@@ -155,7 +166,7 @@ body {
 .control,
 .arrows {
   border: 1px solid black;
-}
+} */
 
 .up-arrow,
 .left-arrow,
