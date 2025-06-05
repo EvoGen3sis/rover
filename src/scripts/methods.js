@@ -12,10 +12,11 @@ let directions = ["forwards", "left", "right", "backwards", ]
 }
 */
 
-async function fetcher() {
-    const response = await fetch("https://jsonplaceholder.typicode.com/users");
-    const data = response.json();
+async function fetcher(id) {
+    const response = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`);
+    const data = await response.json();
+    //const user = data.find(user => user.id === id);
     console.log(data);
 }
 
-fetcher();
+fetcher(3);
