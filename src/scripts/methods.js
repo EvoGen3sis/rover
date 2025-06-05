@@ -1,6 +1,6 @@
 // Client side logic:
 
-let directions = ["forwards", "left", "right", "backwards", ]
+let directions = ["forwards", "left", "right", "backwards"]
 
 /* function fetchAPI() {
     fetch("/motor", {

@@ -25,48 +25,6 @@ picam2 = Picamera2()
 picam2.configure(picam2.create_video_configuration(main={"size": (640, 480)}))
 picam2.start()
 
-# === Flask Setup ===
-app = Flask(__name__)
-
-HTML_TEMPLATE = """
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Robot Control with Video</title>
-    <style>
-        body { text-align: center; font-family: sans-serif; }
-        button {
-            width: 100px; height: 60px;
-            font-size: 16px; margin: 10px;
-        }
-        img {
-            width: 640px;
-            height: 480px;
-            border: 2px solid #555;
-            margin-bottom: 10px;
-        }
-    </style>
-</head>
-<body>
-    <h1>Robot Control with Video</h1>
-    <img src="{{ url_for('video_feed') }}" alt="Video Stream">
-    <form action="/" method="post">
-        <div>
-            <button name="action" value="forward">Forward</button>
-        </div>
-        <div>
-            <button name="action" value="left">Left</button>
-            <button name="action" value="stop">Stop</button>
-            <button name="action" value="right">Right</button>
-        </div>
-        <div>
-            <button name="action" value="backward">Backward</button>
-        </div>
-    </form>
-</body>
-</html>
-"""
 
 # === Motor Control Functions ===
 def stop():
