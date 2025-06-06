@@ -2,6 +2,7 @@ try:
     import RPi.GPIO as GPIO
 except (ImportError, RuntimeError):
     pass
+
 class Motor:
     def __init__(self):
         self.lmf = 17
@@ -9,6 +10,12 @@ class Motor:
         self.rmf = 22
         self.rmb = 23
         self.pins = [self.lmf, self.lmb, self.rmf, self.rmb]
+        for pin in self.pins:
+            GPIO.setup(pin, GPIO.OUT)
+            GPIO.output(pin, GPIO.LOW)
+
+    GPIO.setmode(GPIO.BCM)
+    GPIO.setwarnings(False)
             
     def forwards(self):
         GPIO.output(self.lmf, GPIO.HIGH)
@@ -37,26 +44,3 @@ class Motor:
     def halt(self):
         for i in self.pins:
             GPIO.output(i, GPIO.LOW)
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    GPIO.setmode(GPIO.BCM)
-    GPIO.setwarnings(False)
-
-for pin in pins:
-        GPIO.setup(pin, GPIO.OUT)
-        GPIO.output(pin, GPIO.LOW)
-
-
