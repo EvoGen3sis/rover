@@ -8,41 +8,55 @@ class Motor:
         self.lmb = 18
         self.rmf = 22
         self.rmb = 23
-        pins = [self.lmf, self.lmb, self.rmf, self.rmb]
+        self.pins = [self.lmf, self.lmb, self.rmf, self.rmb]
             
-GPIO.setmode(GPIO.BCM)
-GPIO.setwarnings(False)
+    def forwards(self):
+        GPIO.output(self.lmf, GPIO.HIGH)
+        GPIO.output(self.lmb, GPIO.LOW)
+        GPIO.output(self.rmf, GPIO.HIGH)
+        GPIO.output(self.rmb, GPIO.LOW)
 
+    def left(self):
+        GPIO.output(self.lmf, GPIO.LOW)
+        GPIO.output(self.lmb, GPIO.HIGH)
+        GPIO.output(self.rmf, GPIO.HIGH)
+        GPIO.output(self.rmb, GPIO.LOW)
+
+    def right(self):
+        GPIO.output(self.lmf, GPIO.HIGH)
+        GPIO.output(self.lmb, GPIO.LOW)
+        GPIO.output(self.rmf, GPIO.LOW)
+        GPIO.output(self.rmb, GPIO.HIGH)
+
+    def backwards(self):
+        GPIO.output(self.lmf, GPIO.LOW)
+        GPIO.output(self.lmb, GPIO.HIGH)
+        GPIO.output(self.rmf, GPIO.LOW)
+        GPIO.output(self.rmb, GPIO.HIGH)
+
+    def halt(self):
+        for i in self.pins:
+            GPIO.output(i, GPIO.LOW)
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    GPIO.setmode(GPIO.BCM)
+    GPIO.setwarnings(False)
 
 for pin in pins:
-    GPIO.setup(pin, GPIO.OUT)
-    GPIO.output(pin, GPIO.LOW)
-
-
-def stop():
-    for pin in MOTOR_PINS:
+        GPIO.setup(pin, GPIO.OUT)
         GPIO.output(pin, GPIO.LOW)
 
-def move_forward():
-    GPIO.output(LEFT_MOTOR_FORWARD, GPIO.HIGH)
-    GPIO.output(LEFT_MOTOR_BACKWARD, GPIO.LOW)
-    GPIO.output(RIGHT_MOTOR_FORWARD, GPIO.HIGH)
-    GPIO.output(RIGHT_MOTOR_BACKWARD, GPIO.LOW)
 
-def move_backward():
-    GPIO.output(LEFT_MOTOR_FORWARD, GPIO.LOW)
-    GPIO.output(LEFT_MOTOR_BACKWARD, GPIO.HIGH)
-    GPIO.output(RIGHT_MOTOR_FORWARD, GPIO.LOW)
-    GPIO.output(RIGHT_MOTOR_BACKWARD, GPIO.HIGH)
-
-def turn_left():
-    GPIO.output(LEFT_MOTOR_FORWARD, GPIO.LOW)
-    GPIO.output(LEFT_MOTOR_BACKWARD, GPIO.HIGH)
-    GPIO.output(RIGHT_MOTOR_FORWARD, GPIO.HIGH)
-    GPIO.output(RIGHT_MOTOR_BACKWARD, GPIO.LOW)
-
-def turn_right():
-    GPIO.output(LEFT_MOTOR_FORWARD, GPIO.HIGH)
-    GPIO.output(LEFT_MOTOR_BACKWARD, GPIO.LOW)
-    GPIO.output(RIGHT_MOTOR_FORWARD, GPIO.LOW)
-    GPIO.output(RIGHT_MOTOR_BACKWARD, GPIO.HIGH)
