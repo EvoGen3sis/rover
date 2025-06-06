@@ -7,12 +7,14 @@ app = Flask(__name__)
 def home():
     return "Hello Flask!"
 
-@app.route("/motor")
+@app.route("/motor", )
 def __init__(self):
     self.directions = ["forwards", "left", "right", "backwards", "halt"]
 
 def motor(self):
     pass
+
+app.route("/feed", )
 
 
 if __name__ == "__main__":
