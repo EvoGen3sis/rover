@@ -1,16 +1,18 @@
-from flask import Flask, render_template_string, request, Response
-import RPi.GPIO as GPIO
-
-
-LEFT_MOTOR_FORWARD = 17
-LEFT_MOTOR_BACKWARD = 18
-RIGHT_MOTOR_FORWARD = 22
-RIGHT_MOTOR_BACKWARD = 23
-
+try:
+    import RPi.GPIO as GPIO
+except (ImportError, RuntimeError):
+    pass
+class Motor:
+    def __init__(self):
+        self.lmf = 17
+        self.lmb = 18
+        self.rmf = 22
+        self.rmb = 23
+        pins = [self.lmf, self.lmb, self.rmf, self.rmb]
+            
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
 
-pins = [LEFT_MOTOR_FORWARD, LEFT_MOTOR_BACKWARD, RIGHT_MOTOR_FORWARD, RIGHT_MOTOR_BACKWARD]
 
 for pin in pins:
     GPIO.setup(pin, GPIO.OUT)
