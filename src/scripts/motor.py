@@ -1,21 +1,22 @@
 try:
     import RPi.GPIO as GPIO
 except (ImportError, RuntimeError):
-    pass
+    raise ImportError("RPi.GPIO not found. Make sure you are running this on a Raspberry Pi.")
 
 class Motor:
     def __init__(self):
+        GPIO.setmode(GPIO.BCM)
+        GPIO.setwarnings(False)
+
         self.lmf = 17
         self.lmb = 18
         self.rmf = 22
         self.rmb = 23
         self.pins = [self.lmf, self.lmb, self.rmf, self.rmb]
+
         for pin in self.pins:
             GPIO.setup(pin, GPIO.OUT)
             GPIO.output(pin, GPIO.LOW)
-
-    GPIO.setmode(GPIO.BCM)
-    GPIO.setwarnings(False)
             
     def forwards(self):
         GPIO.output(self.lmf, GPIO.HIGH)
@@ -44,3 +45,6 @@ class Motor:
     def halt(self):
         for i in self.pins:
             GPIO.output(i, GPIO.LOW)
+
+    def cleanup(self):
+        GPIO.cleanup()
