@@ -14,7 +14,14 @@ let directions = ["forwards", "left", "right", "backwards"]
 
 async function fetchById(id) {
     const response = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`); // async operation
-    const data = await response.json(); // async operation
-    //const user = data.find(user => user.id === id);
-    console.log(data);
+    const user = await response.json(); // async operation
+    let tuple = []
+    tuple.push([user.id, user.name])
+    console.log(tuple);
+    /* console.log(user.username);
+    console.log(user.email); */
+}
+
+for (let i = 0; i <= 10; i++){
+    fetchById(i);
 }
