@@ -1,5 +1,5 @@
 from flask import Flask
-#from motor import 
+from motor import Motor
 
 app = Flask(__name__)
 
@@ -7,12 +7,10 @@ app = Flask(__name__)
 def home():
     return "Hello Flask!"
 
-@app.route("/motor", )
-def __init__(self):
-    self.directions = ["forwards", "left", "right", "backwards", "halt"]
+@app.route("/motor", methods = ["POST"])
 
-def motor(self):
-    pass
+
+
 
 app.route("/feed", )
 
