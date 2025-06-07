@@ -1,17 +1,24 @@
 // Client side logic:
 
-let directions = ["forwards", "left", "right", "backwards"]
+//let directions = ["forwards", "left", "right", "backwards"];
+let request = {
+    method: "POST", 
+    header: {
+        "Content-Type": "application/json"
+    }, 
+    body: JSON.stringify(direction)
+}
 
-/* function fetchAPI() {
-    fetch("/motor", {
 
-    })
+ function fetchAPI() {
+    fetch("/motor", request)
     .then(re)
     .then()
     .catch()
 }
-*/
 
+
+/*
 async function fetchById(id) {
     const response = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`); // async operation
     const user = await response.json(); // async operation
@@ -19,9 +26,10 @@ async function fetchById(id) {
     tuple.push([user.id, user.name])
     console.log(tuple);
     /* console.log(user.username);
-    console.log(user.email); */
+    console.log(user.email); 
 }
 
 for (let i = 0; i <= 10; i++){
     fetchById(i);
 }
+*/
