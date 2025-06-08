@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify, send_from_directory, render_template
-from motor import forwards, left, right, backwards, halt
+from demo import forwards, left, right, backwards, halt
+#from motor import forwards, left, right, backwards, halt
 from flask_cors import CORS
 import os
 
