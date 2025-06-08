@@ -12,13 +12,29 @@ CORS(app)
 def index():
     return render_template("index.html")
 
-@app.route("/motor/<directions>", methods = ["POST"])
-def __init__(self):
-    pass
+direction_handlers = {"forwards": forwards(), 
+    "left": left(), 
+    "right": right(), 
+    "backwards": backwards(), 
+    "halt": halt()
+}
 
+@app.route("/motor", methods=["POST"])
+def motor_control():
+    data = request.get_json()
+    direction = data.get("direction")
+
+    handler = direction_handlers.get(direction)
+
+    if handler:
+        handler()
+        return jsonify({"status": "OK", "direction": direction})
+    else:
+        return jsonify({"error": "Invalid direction"}), 400
 
 
 #app.route("/feed", )
+
 @app.route("/scripts/<path:filename>")
 def serve_script(filename):
     return send_from_directory("scripts", filename)
