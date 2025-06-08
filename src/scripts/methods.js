@@ -5,15 +5,17 @@
  async function move(direction) {
     const request = {
         method: "POST",
-        header: {
-            "Content-Type": "application-json"
+        headers: {
+            "Content-Type": "application/json"
         },
         body: JSON.stringify({"direction": direction})
     }
 
     try{
         const response = await fetch("/motor", request);
-    const data = await response.json();
+        const data = await response.json();
+        console.log("Direction sent:", direction);
+        console.log("Server response:", data);
     } catch (e) {
         console.log(`Request returned an error: ${e}`);
     }
