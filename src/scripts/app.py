@@ -7,7 +7,7 @@ app = Flask(__name__)
 def home():
     return "Hello Flask!"
 
-@app.route("/motor", methods = ["POST"])
+@app.route("/motor/<directions>", methods = ["POST"])
 
 
 

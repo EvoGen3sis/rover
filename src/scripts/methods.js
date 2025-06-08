@@ -1,22 +1,24 @@
 // Client side logic:
 
 //let directions = ["forwards", "left", "right", "backwards"];
-let request = {
-    method: "POST", 
-    header: {
-        "Content-Type": "application/json"
-    }, 
-    body: JSON.stringify(direction)
-}
 
+ async function fetchAPI(direction) {
+    const request = {
+        method: "POST",
+        header: {
+            "Content-Type": "application-json"
+        },
+        body: JSON.stringify({"direction": direction})
+    }
 
- async function fetchAPI() {
-    let req = await fetch("/motor", request)
-    .then()
-    .then()
-    .catch()
-}
+    try{
+        const response = await fetch("/motor", request);
+    const data = await response.json();
+    } catch (e) {
+        console.log(`Request returned an error: ${e}`);
+    }
 
+ }
 
 /*
 async function fetchById(id) {

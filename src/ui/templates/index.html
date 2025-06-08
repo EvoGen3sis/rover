@@ -23,26 +23,26 @@
                     </div>
                     <div class = arrows>
                         <div class = "vertical-arrows">
-                            <button aria-label = "Move up">
+                            <button oneclick = "move('forwards')" aria-label = "Move up">
                                 <div class = "arrow up-arrow">
                                     <img src = "../../../imgs/arrow-up-solid.svg" alt = "Up arrow">
                                 </div>
                             </button>
                         </div>
                         <div class = "horizontal-arrows">
-                            <button aria-label = "Move left">
+                            <button oneclick = "move('left')" aria-label = "Move left">
                                 <div class = "arrow left-arrow">
                                     <img src = "../../../imgs/arrow-left-solid.svg" alt = "Left arrow">
                                 </div>
                             </button>
-                            <button aria-label = "Move right">
+                            <button oneclick = "move('right')" aria-label = "Move right">
                                 <div class = "arrow right-arrow">
                                     <img src = "../../../imgs/arrow-right-solid.svg" alt = "Right arrow">
                                 </div>
                             </button>
                         </div>
                         <div class = "vertical-arrows">
-                            <button aria-label = "Move down">
+                            <button oneclick = "move('backwards')" aria-label = "Move down">
                                 <div class = "arrow down-arrow">
                                     <img src = "../../../imgs/arrow-down-solid.svg" alt = "Down arrow">
                                 </div>
@@ -53,5 +53,6 @@
             </div>
             <div class = right></div>
         </div>
+        <script src="../static/methods.js"></script>
     </body>
 </html>
