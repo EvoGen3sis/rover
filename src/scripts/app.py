@@ -10,11 +10,12 @@ def home():
     return "Hello Flask!"
 
 @app.route("/motor/<directions>", methods = ["POST"])
+def __init__(self):
+    pass
 
 
 
-
-app.route("/feed", )
+#app.route("/feed", )
 
 
 if __name__ == "__main__":
