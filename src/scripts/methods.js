@@ -2,7 +2,7 @@
 
 //let directions = ["forwards", "left", "right", "backwards"];
 
- async function fetchAPI(direction) {
+ async function move(direction) {
     const request = {
         method: "POST",
         header: {
