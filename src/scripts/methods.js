@@ -10,9 +10,9 @@ let request = {
 }
 
 
- function fetchAPI() {
-    fetch("/motor", request)
-    .then(re)
+ async function fetchAPI() {
+    let req = await fetch("/motor", request)
+    .then()
     .then()
     .catch()
 }
